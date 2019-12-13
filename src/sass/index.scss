@@ -1,0 +1,131 @@
+@import "adversting";
+@import "header";
+#carousel {
+    position: relative;
+    height: 550px;
+    .carouselContent {
+        height: 100%;
+        background: #ccc;
+    }
+    .carousel_banner {}
+    .carousel_list {
+        position: absolute;
+        top: 18px;
+        border-radius: 10px;
+        left: 0;
+        width: 220px;
+        height: 440px;
+        background: white;
+    }
+    .slide_list {
+        position: absolute;
+        right: 0;
+        top: 448px;
+        span {
+            float: left;
+            display: block;
+            width: 10px;
+            height: 10px;
+            border: 2px solid white;
+            border-radius: 50%;
+            margin-right: 7px;
+        }
+    }
+    .button_left {
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        border-radius: 50%;
+        top: 200px;
+        left: 250px;
+        background: white;
+    }
+    .button_right {
+        display: block;
+        width: 80px;
+        position: absolute;
+        height: 80px;
+        border-radius: 50%;
+        top: 200px;
+        right: 20px;
+        background: white;
+    }
+}
+
+#floor_top {
+    height: 1280px;
+    .topContent {
+        height: 1235px;
+        background: skyblue;
+        padding-top: 45px;
+        .topContent_1 {
+            width: 1200px;
+            height: 90px;
+            background: white;
+            position: absolute;
+            left: 50%;
+            margin-left: -600px;
+            top: -70px;
+            border-radius: 10px;
+        }
+        .topContent_2 {
+            width: 1200px;
+            height: 234px;
+            background: white;
+            border-radius: 10px;
+        }
+    }
+}
+
+#channel_floor_1 {
+    height: 133px;
+    padding-top: 27px;
+    .channel1Content {
+        height: 120px;
+        background: #ccc;
+    }
+}
+
+#floor_bottom {
+    min-height: 1200px;
+    .bottomContent {
+        min-height: 1200px;
+        background: green;
+    }
+}
+
+#channel_floor_2 {
+    height: 260px;
+    .channel2Content {
+        height: 200px;
+        background: cyan;
+    }
+}
+
+#footer {
+    .footr_top {
+        height: 69px;
+        padding: 22px 0 20px 0;
+        .top_content {
+            height: 69px;
+            background: #ccc;
+        }
+    }
+    .footr_mid {
+        height: 180px;
+        padding: 24px 0 24px 0;
+        .mid_content {
+            height: 180px;
+            background: #ccc;
+        }
+    }
+    .footr_bom {
+        height: 116px;
+        padding: 25px 0 28px 0;
+        .bom_content {
+            height: 116px;
+            background: #ccc;
+        }
+    }
+}

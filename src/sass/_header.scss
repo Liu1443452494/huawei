@@ -1,0 +1,65 @@
+@font-face {
+    font-family: iconfont;
+    src: url(../font/iconfonta.woff) format("woff")
+}
+
+#header {
+    padding: 18px 0 15px 0;
+    .headerContent {
+        height: 42px;
+        .header_left {
+            width: 655px;
+            height: 100%;
+        }
+        .header_right {
+            width: 320px;
+            height: 100%;
+            background: #ccc;
+        }
+    }
+}
+
+.header_left .logo {
+    img {
+        width: 205px;
+        height: 36px;
+        cursor: pointer;
+    }
+}
+
+.header_left .list {
+    ul {
+        height: 40px;
+    }
+    li {
+        float: left;
+        margin-right: 24px;
+        line-height: 40px;
+        cursor: pointer;
+        img {
+            width: 75px;
+            height: 24px;
+            margin-top: 7px;
+        }
+    }
+}
+
+.header_left .list {
+    .li:hover {
+        color: #ca141d;
+    }
+    .pic:hover {
+        opacity: 0.8;
+    }
+}
+
+.header_right .search_bar {
+    width: 320px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid red;
+}
+
+.header_right form .iconfont {
+    font-family: iconfont;
+}

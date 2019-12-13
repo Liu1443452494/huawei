@@ -1,0 +1,360 @@
+#nav {
+  background: #f9f9f9;
+}
+
+.aContent {
+  height: 90px;
+}
+
+.navContent {
+  height: 36px;
+}
+.navContent .nav_left {
+  width: 600px;
+  height: 100%;
+}
+.navContent .nav_right {
+  width: 413px;
+  height: 100%;
+}
+.navContent ul > li {
+  float: left;
+  font-size: 12px;
+  line-height: 36px;
+  position: relative;
+  cursor: pointer;
+  color: #a4a4a4;
+}
+
+.nav_left ul > li {
+  padding: 0 7px;
+}
+
+.navContent ul > li:hover {
+  color: #ca151d;
+}
+
+.navContent ul > li:before {
+  content: "";
+  width: 1px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  top: 13px;
+  left: 0;
+  background: #d3d3d3;
+}
+
+.navContent ul > li:nth-of-type(1):before {
+  content: "";
+  width: 0;
+}
+
+.nav_left ul > li:nth-of-type(1) {
+  padding-left: 0;
+}
+
+.navContent .arrows {
+  padding-right: 20px;
+}
+
+.navContent .arrows::after {
+  content: "";
+  background: url(https://res8.vmallres.com/20191126/css/../images/echannel/icon/icon-common.svg) no-repeat;
+  display: block;
+  width: 14px;
+  height: 20px;
+  background-position: -72px 10px;
+  position: absolute;
+  top: 0;
+  right: 4px;
+}
+
+.navContent .arrows {
+  position: relative;
+}
+.navContent .arrows ol {
+  display: none;
+}
+.navContent .arrows ol li {
+  text-align: center;
+}
+
+.navContent .arrows:hover::after {
+  background-position: -85px 10px;
+}
+
+.navContent .arrows:hover ol {
+  top: 36px;
+  display: block;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 2px 36px 0 rgba(0, 0, 0, 0.07);
+  border-radius: 8px 0 8px 8px;
+  z-index: 10;
+}
+
+.navContent ol {
+  position: absolute;
+  width: 120px;
+  background: #fff;
+}
+.navContent ol li {
+  width: 100%;
+  color: #777;
+}
+.navContent ol li:hover {
+  color: #ca151d;
+}
+
+.nav_right > ul > li {
+  padding: 0 8px;
+}
+.nav_right > ul > li ol {
+  width: 80px;
+}
+
+.nav_right .arrows .box {
+  width: 894px;
+  height: 140px;
+  border-radius: 10px;
+  background: #fff;
+  position: absolute;
+  top: 36;
+  right: 0;
+  z-index: 1;
+  display: none;
+}
+.nav_right .arrows .box .icon {
+  margin: 37px 46px 0 49px;
+  width: 55px;
+  height: 73px;
+  float: left;
+}
+.nav_right .arrows .box .icon span {
+  color: #777;
+}
+.nav_right .arrows .box .icon span:nth-of-type(1)::before {
+  content: "";
+  background: url(https://res8.vmallres.com/20191126/css/../images/echannel/icon/icon-common.svg) no-repeat;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-position: -202px 0;
+}
+.nav_right .arrows .box .f {
+  width: 185px;
+  float: left;
+  margin-top: 22px;
+}
+.nav_right .arrows .box .f p {
+  font-size: 16px;
+  color: #333 !important;
+  font-weight: 700;
+  cursor: text;
+}
+.nav_right .arrows .box a {
+  color: #777;
+}
+.nav_right .arrows .box a:hover {
+  color: #ca151d;
+}
+.nav_right .arrows .box .f1 {
+  width: 80px;
+  height: 20px;
+  float: left;
+}
+
+.nav_right .arrows:hover .box {
+  display: block;
+  box-shadow: 0 2px 36px 0 rgba(0, 0, 0, 0.07);
+  border-radius: 8px 0 8px 8px;
+}
+
+@font-face {
+  font-family: iconfont;
+  src: url(../font/iconfonta.woff) format("woff");
+}
+#header {
+  padding: 18px 0 15px 0;
+}
+#header .headerContent {
+  height: 42px;
+}
+#header .headerContent .header_left {
+  width: 655px;
+  height: 100%;
+}
+#header .headerContent .header_right {
+  width: 320px;
+  height: 100%;
+  background: #ccc;
+}
+
+.header_left .logo img {
+  width: 205px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.header_left .list ul {
+  height: 40px;
+}
+.header_left .list li {
+  float: left;
+  margin-right: 24px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.header_left .list li img {
+  width: 75px;
+  height: 24px;
+  margin-top: 7px;
+}
+
+.header_left .list .li:hover {
+  color: #ca141d;
+}
+.header_left .list .pic:hover {
+  opacity: 0.8;
+}
+
+.header_right .search_bar {
+  width: 320px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid red;
+}
+
+.header_right form .iconfont {
+  font-family: iconfont;
+}
+
+#carousel {
+  position: relative;
+  height: 550px;
+}
+#carousel .carouselContent {
+  height: 100%;
+  background: #ccc;
+}
+#carousel .carousel_list {
+  position: absolute;
+  top: 18px;
+  border-radius: 10px;
+  left: 0;
+  width: 220px;
+  height: 440px;
+  background: white;
+}
+#carousel .slide_list {
+  position: absolute;
+  right: 0;
+  top: 448px;
+}
+#carousel .slide_list span {
+  float: left;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+#carousel .button_left {
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  border-radius: 50%;
+  top: 200px;
+  left: 250px;
+  background: white;
+}
+#carousel .button_right {
+  display: block;
+  width: 80px;
+  position: absolute;
+  height: 80px;
+  border-radius: 50%;
+  top: 200px;
+  right: 20px;
+  background: white;
+}
+
+#floor_top {
+  height: 1280px;
+}
+#floor_top .topContent {
+  height: 1235px;
+  background: skyblue;
+  padding-top: 45px;
+}
+#floor_top .topContent .topContent_1 {
+  width: 1200px;
+  height: 90px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  margin-left: -600px;
+  top: -70px;
+  border-radius: 10px;
+}
+#floor_top .topContent .topContent_2 {
+  width: 1200px;
+  height: 234px;
+  background: white;
+  border-radius: 10px;
+}
+
+#channel_floor_1 {
+  height: 133px;
+  padding-top: 27px;
+}
+#channel_floor_1 .channel1Content {
+  height: 120px;
+  background: #ccc;
+}
+
+#floor_bottom {
+  min-height: 1200px;
+}
+#floor_bottom .bottomContent {
+  min-height: 1200px;
+  background: green;
+}
+
+#channel_floor_2 {
+  height: 260px;
+}
+#channel_floor_2 .channel2Content {
+  height: 200px;
+  background: cyan;
+}
+
+#footer .footr_top {
+  height: 69px;
+  padding: 22px 0 20px 0;
+}
+#footer .footr_top .top_content {
+  height: 69px;
+  background: #ccc;
+}
+#footer .footr_mid {
+  height: 180px;
+  padding: 24px 0 24px 0;
+}
+#footer .footr_mid .mid_content {
+  height: 180px;
+  background: #ccc;
+}
+#footer .footr_bom {
+  height: 116px;
+  padding: 25px 0 28px 0;
+}
+#footer .footr_bom .bom_content {
+  height: 116px;
+  background: #ccc;
+}
+
+/*# sourceMappingURL=index.css.map */
