@@ -2,7 +2,6 @@
     height: 1280px;
     .topContent {
         height: 1235px;
-        background: skyblue;
         padding-top: 45px;
         .topContent_1 {
             width: 1200px;
@@ -284,6 +283,9 @@
 
 .hot_list {
     height: 604px;
+    .li_shadow {
+        box-shadow: 0px 2px 12px 5px rgba(0, 0, 0, 0.1);
+    }
     li {
         width: 230px;
         background: #f9f9f9;
@@ -291,11 +293,11 @@
         margin-left: 12px;
         margin-bottom: 12px;
         margin-top: 0;
+        transition: all .2s linear 0s;
     }
     .list_left {
         width: 232px;
         height: 100%;
-        background: red;
         ul {
             margin-left: -10px;
         }
@@ -306,10 +308,10 @@
     .list_right {
         width: 968px;
         height: 100%;
-        background: blue;
         li {
             height: 290px;
             float: left;
+            position: relative;
         }
     }
 }
@@ -322,5 +324,54 @@
         width: 230px;
         height: 592px;
         border-radius: 10px;
+    }
+}
+
+.list_right {
+    p {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .grid_img {
+        width: 150px;
+        height: 150px;
+        margin: 35px auto 0;
+    }
+    img {
+        width: 150px;
+        height: 150px;
+    }
+    .grid_title {
+        width: 210px;
+        height: 21px;
+        line-height: 21px;
+        margin-top: 12px;
+    }
+    .grid_desc {
+        height: 18px;
+        line-height: 18px;
+    }
+    .grid_price {
+        color: #d0021b;
+        height: 21px;
+        line-height: 21px;
+        margin-bottom: 0;
+    }
+    .grid_tips {
+        width: 230px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        text-align: center;
+        span {
+            display: inline-block;
+            height: 22px;
+            line-height: 22px;
+            color: rgb(255, 255, 255);
+            padding: 0px 9px;
+            margin: 0px auto;
+            background: #FF6A6E;
+            border-radius: 0px 0px 6px 6px;
+        }
     }
 }
