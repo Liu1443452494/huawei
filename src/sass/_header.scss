@@ -14,7 +14,6 @@
         .header_right {
             width: 320px;
             height: 100%;
-            background: #ccc;
         }
     }
 }
@@ -57,7 +56,63 @@
     width: 320px;
     height: 30px;
     border-radius: 15px;
-    border: 1px solid red;
+    margin-top: 5px;
+    background: #f0f0f0;
+    position: relative;
+    &:hover {
+        border: 1px solid #c9c9c9;
+    }
+    &:hover .search_key {
+        bottom: 7px;
+        right: 32px;
+    }
+    &:hover .button {
+        font-weight: 600;
+    }
+    .text {
+        display: block;
+        width: 270px;
+        height: 30px;
+        border: 0;
+        border-radius: 15px;
+        padding-left: 15px;
+        background: #f0f0f0;
+    }
+    .button {
+        display: block;
+        width: 35px;
+        height: 30px;
+        border-radius: 15px;
+        font-size: 16px;
+        font-weight: 700;
+        border: 0;
+        cursor: pointer;
+        background: #f0f0f0;
+    }
+    .search_key {
+        position: absolute;
+        max-width: 260px;
+        right: 31px;
+        bottom: 6px;
+        z-index: 311;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+.header_right .search_key {
+    span:nth-of-type(1) {
+        color: #CF0A2C;
+        cursor: pointer;
+    }
+    span:nth-of-type(2) {
+        color: #999;
+        font-size: 12px;
+        cursor: pointer;
+        &:hover {
+            color: #333;
+        }
+    }
 }
 
 .header_right form .iconfont {

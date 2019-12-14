@@ -1,0 +1,93 @@
+#carousel {
+    position: relative;
+    height: 550px;
+    .carouselContent {
+        height: 100%;
+        background: #ccc;
+    }
+    .carousel_list {
+        position: absolute;
+        top: 18px;
+        border-radius: 10px;
+        left: 0;
+        width: 200px;
+        height: 440px;
+        background: white;
+    }
+    .slide_list {
+        position: absolute;
+        right: 0;
+        top: 448px;
+        span {
+            float: left;
+            display: block;
+            width: 10px;
+            height: 10px;
+            border: 2px solid white;
+            border-radius: 50%;
+            margin-right: 7px;
+        }
+    }
+    .button_left {
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        border-radius: 50%;
+        top: 200px;
+        left: 250px;
+    }
+    .button_right {
+        display: block;
+        width: 80px;
+        position: absolute;
+        height: 80px;
+        border-radius: 50%;
+        top: 200px;
+        right: 20px;
+    }
+}
+
+.list_div {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -600px;
+}
+
+.carousel_list {
+    li {
+        width: 200px;
+        height: 73px;
+        .li_item {
+            width: 150px;
+            height: 47px;
+            padding-top: 12px;
+            margin-left: 25px;
+        }
+    }
+    .li_item a {
+        color: #a6a6a6;
+        margin-right: 5px;
+        font-size: 14px;
+        display: inline-block;
+    }
+    .item_title a {
+        font-size: 14px;
+        color: #848484;
+    }
+}
+
+.list_div .button_left {
+    background: url(https://res8.vmallres.com/20191126/css/../images/echannel/icon/icon01.svg) no-repeat;
+    background-position: 0 -72px;
+}
+
+.list_div .button_right {
+    background: url(https://res8.vmallres.com/20191126/css/../images/echannel/icon/icon01.svg) no-repeat;
+    background-position: -78px -72px;
+}
