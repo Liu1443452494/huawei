@@ -1,0 +1,237 @@
+body {
+  background-color: #f7f7f7;
+}
+
+#header {
+  height: 67px;
+  background-color: #f7f7f7;
+}
+#header .contanier {
+  height: 67px;
+  width: 960px;
+  margin: 0 auto;
+}
+#header .contanier .logo {
+  margin-left: 4px;
+  margin-top: 15px;
+}
+#header .contanier img {
+  display: block;
+}
+#header .contanier .name {
+  color: white;
+  font-size: 20px;
+  line-height: 50px;
+  font-family: "arial";
+  padding-top: 12px;
+  margin-left: 25px;
+}
+#header .contanier .name span {
+  color: #333;
+  font-size: 18px;
+  margin-top: -3px;
+  float: left;
+  margin-left: 20px;
+}
+
+main {
+  height: 590px;
+  background-color: #081638;
+}
+main .sContainer {
+  height: 100%;
+  background: url(https://id1.cloud.huawei.com/CAS/up/idmw_rss_44/ads/login_default_bg.png);
+  position: relative;
+}
+
+#login {
+  width: 420px;
+  height: 540px;
+  background: #fff;
+  position: absolute;
+  right: 0;
+  top: 30px;
+}
+#login .login_contanier {
+  position: relative;
+  width: 420px;
+  height: 497px;
+  padding-top: 10px;
+}
+#login .login_div {
+  width: 380px;
+  height: 530px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#login .div_h {
+  width: 380px;
+  height: 30px;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 20px;
+}
+#login .div_h span {
+  text-align: center;
+  width: 165px;
+  padding: 0 40px;
+  vertical-align: middle;
+}
+#login .div_h .title_left {
+  color: #b40707;
+}
+#login .div_h .title_right {
+  border-left: 1px solid #ccc;
+}
+#login form {
+  width: 328px;
+  height: 261px;
+  margin: 0 auto;
+  margin-top: 45px;
+}
+#login form input {
+  display: block;
+  width: 328px;
+  height: 46px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  margin-bottom: 5px;
+}
+#login form input::placeholder {
+  font-size: 16px;
+  color: #cccccc;
+}
+#login form .phone {
+  color: #0064cc;
+  height: 46px;
+  line-height: 46px;
+}
+#login form .phoneicon {
+  width: 11px;
+  height: 15px;
+  background-image: url(https://id1.cloud.huawei.com/CAS/up/idmw_rss_44/css/portal/vmall_rss/loginEMUIV6/img/ic_smsLogin.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-position: -2px 0;
+  margin-bottom: -3px;
+}
+#login form button {
+  width: 326px;
+  border: 0;
+  border-radius: 0;
+  line-height: 44px;
+  height: 44px;
+  font-weight: bold;
+  font-size: 14px;
+  background-image: none;
+  cursor: pointer;
+  border-radius: 26px;
+  text-align: center;
+  margin-top: 0;
+  color: #fff;
+  background-color: #c70000;
+}
+#login form .checkbox {
+  height: 48px;
+  line-height: 48px;
+  margin-top: 10px;
+}
+#login form .checkbox span {
+  display: inline-block;
+  margin-top: -5px;
+  vertical-align: middle;
+}
+#login form .checkbox1 {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  margin: -6px 0 0 0;
+  vertical-align: middle;
+}
+
+.div_mt_links {
+  width: 328px;
+  height: 15px;
+  text-align: center;
+}
+.div_mt_links span {
+  padding: 0 10px;
+  border-right: 1px solid #ccc;
+  text-align: right;
+}
+.div_mt_links span a {
+  color: #007dff;
+}
+
+.thirdLoginBlock {
+  position: absolute;
+  margin: 0 auto;
+  bottom: 0;
+  left: 10px;
+  width: 328px;
+  height: 82px;
+}
+.thirdLoginBlock .third_title {
+  width: 328px;
+  position: relative;
+  text-align: center;
+}
+.thirdLoginBlock .third_title i {
+  background-repeat: no-repeat;
+  height: 1px;
+  position: absolute;
+  width: 94px;
+  background-size: cover;
+  top: 50%;
+}
+.thirdLoginBlock .third_title .title_left {
+  left: 0;
+  background-image: url(https://id1.cloud.huawei.com/CAS/up/idmw_rss_44/css/portal/vmall_rss/loginEMUIV6/img/thirdLine.png);
+}
+.thirdLoginBlock .third_title .title_right {
+  right: 0;
+  background-image: url(https://id1.cloud.huawei.com/CAS/up/idmw_rss_44/css/portal/vmall_rss/loginEMUIV6/img/thirdLine-reverse.png);
+}
+.thirdLoginBlock .third_loginDiv {
+  text-align: center;
+  margin-top: 10px;
+}
+.thirdLoginBlock .third_loginDiv span {
+  display: inline-block;
+  padding: 0 10px;
+}
+.thirdLoginBlock .third_loginDiv a {
+  background-image: url(https://id1.cloud.huawei.com/CAS/up/idmw_rss_44/css/portal/vmall_rss/loginEMUIV6/img/third_login.png);
+  background-repeat: no-repeat;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  display: inline-block;
+  margin: 0;
+  float: none;
+  background-position: -72px -9px;
+}
+.thirdLoginBlock .third_loginDiv .zhifubao a {
+  background-position: -132px -9px;
+}
+.thirdLoginBlock .third_loginDiv .weicat a {
+  background-position: -12px -9px;
+}
+
+#footer {
+  background-color: #f7f7f7;
+  margin-top: 50px;
+}
+#footer p {
+  color: #999;
+  font-size: 14px;
+}
+#footer a {
+  color: #999;
+  padding: 0 10px;
+}
+
+/*# sourceMappingURL=login.css.map */

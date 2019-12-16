@@ -2,9 +2,10 @@
 
 class Hotgoods {
     constructor() {
-        this.url = 'http://10.31.161.144/huawei/php/';
+        this.url = 'http://localhost/huawei/php/';
         this.leftLi = document.querySelector('.hot_goods .list_left li');
-        this.rightLi = document.querySelectorAll('.hot_goods .list_right li')
+        this.rightLi = document.querySelectorAll('.hot_goods .list_right li');
+        this.topContent = document.querySelector('.topContent_2')
 
     }
     init() {
@@ -35,10 +36,14 @@ class Hotgoods {
                     _this.leftLi.innerHTML = ` <a href=""><img src="${value.url}" alt=""></a>`;
                     _this.hgoodshover(_this.leftLi);
                 }
+
+
             }
 
         })
     }
+
+
 
     //鼠标移入移出效果
     hgoodshover(obj) {
@@ -49,6 +54,7 @@ class Hotgoods {
             obj.onmouseout = function() {
                 _this.removeClass(this);
             }
+
 
 
         }

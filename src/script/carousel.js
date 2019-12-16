@@ -2,13 +2,14 @@
 
 class Carousel {
     constructor() {
-        this.url = 'http://10.31.161.144/huawei/php/';
+        this.url = 'http://localhost/huawei/php/';
         this.carousel_banner = document.querySelector('.carousel_banner');
         this.list_div = document.querySelector('.list_div .slide_list ');
         this.leftbtn = document.querySelector('.button_left')
         this.rightbtn = document.querySelector('.button_right');
         this.timer = null;
         this.carousel = document.querySelector('#carousel');
+        this.topcontnet = document.querySelector('.topContent_2')
     }
     init() {
             let _this = this;
@@ -16,7 +17,7 @@ class Carousel {
                 url: this.url + 'carousel.php',
                 dataType: 'json',
             }).then(data => {
-                console.log(_this.list_div);
+
                 let str = '';
                 let str1 = '';
                 for (let value of data) {
@@ -100,7 +101,7 @@ class Carousel {
                 _this.rightbtn.onclick();
                 console.log(_this.list_div);
             }, 3000)
-            this.carousel.onmouseover = function() {
+            this.carousel.onmouseover = function(e) {
                 clearInterval(_this.timer)
             }
             this.carousel.onmouseout = function() {
