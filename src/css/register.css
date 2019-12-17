@@ -115,8 +115,48 @@ body {
 }
 
 .r_content form p {
+  width: 420px;
   height: 44px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  border-radius: 22px;
+}
+.r_content form p .matips {
+  position: absolute;
+  left: 75px;
+  bottom: 15px;
+  display: none;
+}
+.r_content form p .matips_1 {
+  text-align: left;
+  display: block;
+  position: relative;
+  top: 35px;
+  padding: 20px 20px 0 40px;
+  width: 205px;
+  height: 80px;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #eee;
+  margin-bottom: -16px;
+  background: white;
+  z-index: 10;
+}
+.r_content form p .matips_1 a {
+  display: block;
+}
+.r_content form p .matips_2 {
+  display: block;
+  width: 267px;
+  height: 120px;
+  background: url(https://id1.cloud.huawei.com/CAS/up/idmw_rss_44/css/common/images/auth_tips.png) no-repeat -10px 0;
+}
+.r_content form p .matips_3 {
+  position: absolute;
+  z-index: 12;
+  top: 117px;
+  width: 205px;
+  height: 23px;
+  left: 40px;
+  border-bottom: 4px solid #37cc0e;
 }
 .r_content form p:nth-of-type(1) {
   margin-top: 30px;
@@ -125,6 +165,12 @@ body {
   border: 0;
   height: 42px;
   font-size: 20px;
+}
+.r_content form p .tips {
+  display: inline-block;
+  padding: 7px 16px;
+  font-size: 12px;
+  color: #ff3320;
 }
 .r_content label {
   display: inline-block;

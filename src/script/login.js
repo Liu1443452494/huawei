@@ -1,0 +1,1 @@
+import { $, ajax, bufferMove, jstool, rannum, addClass, removeClass, removeAll } from './tools.js';

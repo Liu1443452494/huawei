@@ -12,11 +12,6 @@ class Advertisingclosed {
     }
 }
 
-//鼠标移入显示二维码
-
-
-
-
 
 
 export {

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>注册_华为帐号</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/register.css">
 </head>
@@ -51,19 +51,34 @@
                         <a href="javascript:;" class="last l">
                             <span>中国</span>
                         </a>
+
                     </p>
                     <p>
                         <label for="">+86(中国)</label><input type="text" placeholder="请输入手机号">
+                        <span class="tips"></span>
                     </p>
-                    <p>
+                    <!-- <p>
                         <label for="">短信验证码</label><input type="text" placeholder="请输入短信验证码">
-                    </p>
+                    </p> -->
 
-                    <p>
-                        <label for="">密&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 码</label><input type="text" placeholder="请输入密码">
+                    <p style="position: relative;">
+
+                        <label for="">密&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 码</label><input type="password" placeholder="请输入密码"> <span class="tips"></span>
+                        <span class="matips">
+                            <span class="matips_1">
+                                密码需满足以下要求：
+                                <a href="" class="m1_left">至少8个字符</a>
+                                <a href="" class="m1_right">至少含字母和数字,不能包含空格</a>
+                            </span>
+                        <span class="matips_2"></span>
+                        <span class="matips_3">
+                            密码强度: 强
+                        </span>
+                        </span>
+
                     </p>
                     <p>
-                        <label for="">确认密码</label><input type="text" placeholder="请再次输入密码">
+                        <label for="">确认密码</label><input type="password" placeholder="请再次输入密码"> <span class="tips"></span>
                     </p>
                     <p>
                         <label for="" class="l">出生日期</label>
@@ -106,6 +121,7 @@
 
 
     </div>
+    <script src="script/register.js" type="module"></script>
 </body>
 
 </html>
