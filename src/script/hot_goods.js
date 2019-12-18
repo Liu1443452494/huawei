@@ -20,7 +20,7 @@ class Hotgoods {
                     let str = '';
                     if (value.title && value.price) {
                         str = `
-                    <a href="">
+                    <a href="details.html?sid=${value.sid}" >
                     <p class="grid_img">
                         <img src="${value.url}" alt="">
                     </p>
@@ -32,15 +32,17 @@ class Hotgoods {
                         <span>${value.tips}</span>
                     </p>`
                         }
+                        str += `</a>`
                         _this.rightLi[value.sid - 2].innerHTML = str;
                         _this.hgoodshover(_this.rightLi[value.sid - 2]);
                     } else {
-                        _this.leftLi.innerHTML = ` <a href=""><img src="${value.url}" alt=""></a>`;
+                        _this.leftLi.innerHTML = ` <a href="details.html?sid=${value.sid}" ><img src="${value.url}" alt=""></a>`;
                         _this.hgoodshover(_this.leftLi);
                     }
-
-
                 }
+
+
+
 
             })
         }

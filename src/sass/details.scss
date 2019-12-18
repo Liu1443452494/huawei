@@ -111,6 +111,7 @@
                         width: 450px;
                         height: 450px;
                         position: relative;
+                        cursor: move;
                         img {
                             width: 100%;
                             height: 100%;
@@ -120,15 +121,18 @@
                         width: 100px;
                         height: 100px;
                         position: absolute;
-                        background: red;
+                        background: white;
+                        opacity: 0.5;
                         top: 0;
+                        visibility: hidden;
+                        border: 1px solid #ccc;
                     }
                     .bf {
                         width: 400px;
                         height: 400px;
                         overflow: hidden;
                         position: absolute;
-                        background: red;
+                        z-index: 999;
                         top: 0;
                         left: 450px;
                         visibility: hidden;
@@ -136,6 +140,7 @@
                     .bpic {
                         width: 800px;
                         height: 800px;
+                        position: absolute;
                     }
                 }
                 

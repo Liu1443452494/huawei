@@ -123,6 +123,7 @@ body {
             height: 44px;
             margin-bottom: 30px;
             border-radius: 22px;
+            background: rgb(243, 243, 243);
             .matips {
                 position: absolute;
                 left: 75px;
@@ -193,6 +194,7 @@ body {
         display: inline-block;
         border: 0;
         border: 1px solid #ccc;
+        background: rgb(243, 243, 243);
         border-left: 0;
         border-radius: 0 21px 21px 0;
         width: 295px;
@@ -213,10 +215,40 @@ body {
         height: 42px;
         line-height: 42px;
         cursor: auto;
-        span {
+        &>span {
             margin-right: 20px;
             display: inline-block;
             line-height: 42px;
+            position: relative;
+            em {
+                font-style: normal;
+                font-weight: 400;
+            }
+            .span1 {
+                position: absolute;
+                top: 42px;
+                left: 0;
+                width: 156px;
+                height: 200px;
+                background: #fff;
+                overflow: auto;
+                border-radius: 5px;
+                z-index: 100;
+                display: none;
+                box-shadow: 1px 2px 17px 8px rgba(0, 0, 0, 0.03);
+                &>span {
+                    display: block;
+                    width: 120px;
+                    height: 15px;
+                    padding: 8px 16px;
+                    line-height: 15px;
+                    border-radius: 5px 0 0 0;
+                    ;
+                    &:hover {
+                        background-color: rgba(0, 125, 255, 0.2);
+                    }
+                }
+            }
             &:nth-of-type(1) {
                 margin-left: 15px;
             }
@@ -230,13 +262,15 @@ body {
             }
         }
     }
-    button {
+    .button {
         display: block;
         width: 200px;
         height: 40px;
         margin: 30px auto;
         border-radius: 20px;
         cursor: pointer;
+        line-height: 40px;
+        text-align: center;
         background-color: #b40707;
         border: 0;
         color: #fff;
