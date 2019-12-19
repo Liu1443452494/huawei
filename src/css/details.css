@@ -570,6 +570,8 @@
 }
 .left_nav .left_list ul {
   width: 2000px;
+  position: absolute;
+  left: 0;
 }
 .left_nav .left_list li {
   width: 68px;
@@ -581,7 +583,6 @@
   display: block;
   width: 66px;
   height: 66px;
-  border: 1px solid #ca141d;
   padding: 0;
 }
 .left_nav .left_list li img {

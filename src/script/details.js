@@ -1,4 +1,4 @@
-import { jstool, $, ajax } from './tools.js';
+import { jstool, $, ajax, bufferMove } from './tools.js';
 
 
 
@@ -11,7 +11,7 @@ class Mglass {
         this.sf = $('.spic .sf');
         this.bf = $('.scale .bf');
         this.bpic = $('.scale .bpic');
-        this.product = $('.product');
+        this.product = $('.product ');
 
     }
     init() {
@@ -87,7 +87,6 @@ new Mglass().init();
 
 
 //购物车渲染
-
 class Cartrender {
     constructor() {
         this.sid = location.search.substr(location.search.length - 1, 1);
@@ -97,17 +96,12 @@ class Cartrender {
         this.price = $('.info_price span', 'all');
         this.ul = $('.left_list ul');
         this.obj = new Mglass();
-
-
-
-
+        this.btn_left = $('.left_nav .btn_left');
+        this.btn_right = $('.left_nav .btn_right');
     }
     init() {
             //获取数据并渲染
             this.getdata();
-
-
-
         }
         //获取数据并渲染
     getdata() {
@@ -120,7 +114,6 @@ class Cartrender {
             dataType: 'json'
         }).then(data => {
             let dataarr = data.urls.split(',')
-
             _this.obj.spic.firstElementChild.src = dataarr[0]
             _this.obj.bpic.src = dataarr[0];
             _this.h1.innerHTML = data.bdesc;
@@ -137,13 +130,13 @@ class Cartrender {
                 `;
             }
             _this.ul.innerHTML = str;
-
-
-
-
             //点击小图切换
             let lis = $('li', 'all', this.ul);
-            _this.imgswitch(lis)
+            lis[0].firstElementChild.style.border = ` 1px solid #ca141d`;
+            _this.imgswitch(lis);
+            this.leftbtn(lis);
+            this.rightbtn(lis);
+
         })
     }
 
@@ -151,12 +144,104 @@ class Cartrender {
     //点击小图切换 
 
     imgswitch(lis) {
+        console.log(lis);
+        let _this = this;
         for (let i = 0; i < lis.length; i++) {
             lis[i].onmouseover = function() {
+                for (let j = 0; j < lis.length; j++) {
+                    lis[j].firstElementChild.style.border = 0;
+                }
 
+
+                _this.obj.spic.firstElementChild.src = this.children[0].firstElementChild.src;
+                _this.obj.bpic.src = this.children[0].firstElementChild.src;
+                this.firstElementChild.style.border = ` 1px solid #ca141d`;
             }
+
+        }
+
+    }
+
+    //点击左箭头切换图片
+    leftbtn(lis) {
+            let _this = this;
+            this.btn_left.onclick = function() {
+                let ulleft = _this.ul.offsetLeft;
+                let num = lis[0].offsetWidth;
+                if (ulleft >= 0) {
+                    num = 0;
+                    bufferMove(_this.ul, { left: 0 });
+                }
+                bufferMove(_this.ul, { left: ulleft + num });
+            }
+        }
+        //点击右箭头切换
+    rightbtn(lis) {
+        let _this = this;
+        this.btn_right.onclick = function() {
+            let ulleft = _this.ul.offsetLeft;
+            let num = lis[0].offsetWidth;
+            if (ulleft <= -num * (lis.length - 5)) {
+                num = 0;
+                bufferMove(_this.ul, { left: -num * (lis.length - 5) });
+            }
+            bufferMove(_this.ul, { left: ulleft - num });
+
+
+        }
+    }
+
+
+}
+new Cartrender().init();
+
+
+
+
+//点击加入购物车
+
+
+class Addcart {
+    constructor() {
+        this.sidarr = [];
+        this.numarr = [];
+        this.sid = location.search.substr(location.search.length - 1, 1);
+        this.input = $('.stock input')
+        this.btn = $('.buttonmain .btn-01');
+
+
+    }
+    init() {
+        let _this = this;
+        this.btn.onclick = function() {
+            _this.addcart();
+        }
+
+    }
+
+
+    //加入购物车
+    addcart() {
+        if (jstool.getcookie('numarr') && jstool.getcookie('sidarr')) {
+            this.sidarr = jstool.getcookie('sidarr').split(',')
+            this.numarr = jstool.getcookie('numarr').split(',')
+
+        }
+        if (this.sidarr.indexOf(this.sid) != -1) {
+            let num = this.numarr[this.sidarr.indexOf(this.sid)];
+            let sum = parseInt(num) + parseInt(this.input.value);
+            this.numarr[this.sidarr.indexOf(this.sid)] = sum;
+            jstool.addcookie('numarr', this.numarr, 30);
+
+        } else {
+            this.sidarr.push(this.sid);
+            this.numarr.push(this.input.value);
+            jstool.addcookie('sidarr', this.sidarr, 30);
+            jstool.addcookie('numarr', this.numarr, 30);
+
+
         }
 
     }
 }
-new Cartrender().init();
+new Addcart().init();

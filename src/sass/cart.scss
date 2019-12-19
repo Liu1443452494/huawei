@@ -78,6 +78,9 @@ body {
 }
 
 .list-pro {
+    position: relative;
+    padding-bottom: 60px;
+    &>div:last-child {}
     .pro_list {
         height: 258px;
         background: #fff;
@@ -216,9 +219,12 @@ body {
 }
 
 .totla_tool {
+    width: 1200px;
     height: 60px;
     margin-top: 20px;
     background: white;
+    position: absolute;
+    bottom: 0;
     .total_control {
         width: 136px;
         height: 60px;
