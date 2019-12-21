@@ -1,28 +1,18 @@
 import { $, ajax, bufferMove, jstool, rannum, addClass, removeClass, removeAll } from './tools.js';
 
-
 //购物车
 class Cart {
     constructor() {
-
-
         this.url = 'http://10.31.161.144/huawei/php/';
         this.list_pro = $('.list-pro');
         this.tool = $('.list-pro .totla_tool');
-
         this.t_span = $('.total_price span', 'all')[1];
         this.pricearr = [];
-
-
+        this.numobj = $('.total_choose em');
     }
     init() {
-
         //判断cookie是否存在
         this.iscookie();
-
-
-
-
     }
 
     //判断cookie是否存在
@@ -30,18 +20,11 @@ class Cart {
         if (jstool.getcookie('sidarr') && jstool.getcookie('numarr')) {
             this.sidarr = jstool.getcookie('sidarr').split(',');
             this.numarr = jstool.getcookie('numarr').split(',');
-            console.log(this.sidarr);
-            console.log(this.numarr);
             for (let i = 0; i < this.sidarr.length; i++) {
-
                 this.cartrender(this.sidarr[i], this.numarr[i])
-
             }
-
         }
     }
-
-
 
     //渲染购物车
     cartrender(sid1, num) {
@@ -87,7 +70,7 @@ class Cart {
                                 </div>
                             </li>
                             <li>
-                                <span class="del">
+                                <span class="del" sid=${data.sid}>
                                     删除
                                 </span>
                             </li>
@@ -120,14 +103,11 @@ class Cart {
                                 <div class="server_name">
                                     <span>延长服务保</span>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-            
             `;
             div.innerHTML = str;
             div.sid = data.sid;
@@ -136,19 +116,13 @@ class Cart {
 
             // 全选按钮
             let checkbox1 = $('.list_title .checkbox input');
-
             let checkbox3 = _this.list_pro.querySelectorAll('.pro_list>.checkbox>input');
             let checkbox4 = $('.totla_tool .checkbox input');
-
-
-
-
-
+            //默认选中状态
             for (let i = 0; i < checkbox3.length; i++) {
                 checkbox3[i].flag = true;
                 checkbox3[i].style.backgroundPosition = '0 -129px';
             }
-
             //复选框点击
             if (this.sidarr.length == checkbox3.length) {
                 for (let i = 0; i < checkbox3.length; i++) {
@@ -156,10 +130,35 @@ class Cart {
                         let str = this.parentNode.nextElementSibling.firstElementChild.children[1].children[3].firstElementChild.innerHTML;
                         if (this.flag == true) {
                             this.flag = false;
+
+
+                            if (_this.ischecked(checkbox3)) {
+                                checkbox1.flag = true;
+                                checkbox4.flag = true;
+                                checkbox1.style.backgroundPosition = '0 -129px';
+                                checkbox4.style.backgroundPosition = '0 -129px';
+                            } else {
+                                checkbox1.flag = false;
+                                checkbox4.flag = false;
+                                checkbox1.style.backgroundPosition = '-18px -129px';
+                                checkbox4.style.backgroundPosition = '-18px -129px';
+                            }
                             _this.checkedchange_1(str.substring(2, str.indexOf('.')), this.getAttribute('sid'))
                         } else if (this.flag == false) {
                             this.flag = true;
+                            if (_this.ischecked(checkbox3)) {
+                                checkbox1.flag = true;
+                                checkbox4.flag = true;
+                                checkbox1.style.backgroundPosition = '0 -129px';
+                                checkbox4.style.backgroundPosition = '0 -129px';
+                            } else {
+                                checkbox1.flag = false;
+                                checkbox4.flag = false;
+                                checkbox1.style.backgroundPosition = '-18px -129px';
+                                checkbox4.style.backgroundPosition = '-18px -129px';
+                            }
                             _this.checkedchange_2(str.substring(2, str.indexOf('.')), this.getAttribute('sid'));
+
                         }
                         if (this.flag == true) {
                             this.style.backgroundPosition = '0 -129px';
@@ -170,16 +169,15 @@ class Cart {
                 }
             }
 
+            //默认全选
             checkbox1.flag = true;
             checkbox4.flag = true;
             checkbox1.style.backgroundPosition = '0 -129px';
             checkbox4.style.backgroundPosition = '0 -129px';
 
-            //全选按钮点击
-            // _this.ischecked_1(checkbox1, checkbox4, checkbox3);
-            // _this.ischecked_1(checkbox4, checkbox1, checkbox3);
-
-
+            // 全选按钮点击
+            _this.ischecked_1(checkbox1, checkbox4, checkbox3);
+            _this.ischecked_1(checkbox4, checkbox1, checkbox3);
 
             //总计元素
             let t_price = $('.price_total');
@@ -193,17 +191,28 @@ class Cart {
             //单价元素
             let li_price = $('.li_price').firstElementChild;
 
+            //删除按钮元素
 
+            let del = $('.pro_main .del');
 
-
-
+            //点击删除该商品
+            del.onclick = function() {
+                let str = this.parentNode.previousElementSibling.firstElementChild.innerHTML;
+                if (confirm('你确定要删除吗')) {
+                    _this.checkedchange_1(str.substring(2, str.indexOf('.')), this.getAttribute('sid'));
+                    _this.list_pro.removeChild(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
+                    let index = _this.sidarr.indexOf(this.getAttribute('sid'));
+                    _this.sidarr.splice(index, 1);
+                    _this.numarr.splice(index, 1);
+                    jstool.addcookie('sidarr', _this.sidarr, 30);
+                    jstool.addcookie('numarr', _this.numarr, 30);
+                }
+            }
 
             //右按钮点击增加数量
             btn_right.onclick = function() {
                 _this.addnum(this, t_price, li_price, this.getAttribute('sid'));
                 _this.t_change(t_price.innerHTML.substring(2, t_price.innerHTML.indexOf('.')), this.getAttribute('sid'));
-                console.log(t_price.innerHTML.substring(2, t_price.innerHTML.indexOf('.')), this.getAttribute('sid'));
-
             }
 
             //左箭头点击减少数量
@@ -212,15 +221,12 @@ class Cart {
                 _this.t_change(t_price.innerHTML.substring(2, t_price.innerHTML.indexOf('.')), this.getAttribute('sid'));
             }
 
-
             _this.totalprice(t_price.innerHTML.substring(2, t_price.innerHTML.indexOf('.')), sid);
+            _this.numobj.innerHTML = this.pricearr.length;
         })
-
-
     }
 
-
-
+    //全选按钮点击
     ischecked_1(obj, other, others) {
         let _this = this;
         obj.onclick = function() {
@@ -232,21 +238,42 @@ class Cart {
             if (this.flag == true) {
                 this.style.backgroundPosition = '0 -129px';
                 other.style.backgroundPosition = '0 -129px';
-                other.flag = false
+                other.flag = true;
                 _this.addchecked(others);
+                for (let i = 0; i < others.length; i++) {
+                    let str = others[i].parentNode.nextElementSibling.firstElementChild.children[1].children[3].firstElementChild.innerHTML;
+                    _this.checkedchange_2(str.substring(2, str.indexOf('.')), others[i].getAttribute('sid'))
+
+                }
             } else if (this.flag == false) {
                 this.style.backgroundPosition = '-18px -129px';
                 other.style.backgroundPosition = '-18px -129px';
-                other.flag = true;
+                other.flag = false;
                 _this.clearchecked(others);
+                for (let i = 0; i < others.length; i++) {
+                    let str = others[i].parentNode.nextElementSibling.firstElementChild.children[1].children[3].firstElementChild.innerHTML;
+                    _this.checkedchange_1(str.substring(2, str.indexOf('.')), others[i].getAttribute('sid'));
+                }
             }
         }
     }
 
+    //判断是否选择状态
+    ischecked(objs) {
+        let num = 0;
+        for (let i = 0; i < objs.length; i++) {
+            if (objs[i].flag == false) {
+                num = 1;
+            }
+        }
+        if (num == 0) {
+            return true;
+        }
+        if (num = 1) {
+            return false;
+        }
 
-
-
-
+    }
 
     //清除选择状态
     clearchecked(obj) {
@@ -261,19 +288,14 @@ class Cart {
     addchecked(obj) {
         for (let i = 0; i < obj.length; i++) {
             obj[i].flag = true;
-            console.log(obj[i].flag);
             if (obj[i].flag == true) {
                 obj[i].style.backgroundPosition = '0 -129px';
             }
         }
     }
 
-
-
-
     //右按钮点击增加数量 并改变当前总价
     addnum(obj, priceobj, uprice, sid) {
-
         let price = uprice.innerHTML.substring(2, uprice.innerHTML.indexOf('.'))
         let num = parseInt(obj.previousElementSibling.value) + 1
         obj.previousElementSibling.value = num;
@@ -295,14 +317,12 @@ class Cart {
         } else {
             obj.style.cursor = 'pointer'
         }
-
         obj.nextElementSibling.value = num;
         priceobj.innerHTML = `¥ ${num*price}.00 `;
         this.numarr[this.sidarr.indexOf(sid)] = num.toString();
         jstool.addcookie('numarr', this.numarr, 30)
 
     }
-
 
     //计算总价
     totalprice(price, sid) {
@@ -314,39 +334,40 @@ class Cart {
         }
     }
 
-
-
-    //
+    //未选择状态删除该项
     checkedchange_1(price, sid) {
         let num = 0;
-
         for (let i = 0; i < this.pricearr.length; i++) {
             if (price == this.pricearr[i][0]) {
-                this.pricearr.splice(i, 1)
-
+                this.pricearr.splice(i, 1);
                 this.addtprice()
             }
         }
 
     }
 
-
+    //选择状态添加该项
     checkedchange_2(price, sid) {
         let num = 0;
-        this.pricearr.push([price, sid]);
+        for (let i = 0; i < this.pricearr.length; i++) {
+            if (this.pricearr[i][1] == sid) {
+                num = 1;
+            }
+        }
+        if (num == 0) {
+            this.pricearr.push([price, sid]);
+        }
         this.addtprice();
     }
 
     //点击左右按钮总价变化
     t_change(price, sid) {
-
         for (let i = 0; i < this.pricearr.length; i++) {
             if (sid == this.pricearr[i][1]) {
                 this.pricearr[i][0] = price;
-                this.addtprice()
+                this.addtprice();
             }
         }
-
 
     }
 
@@ -355,12 +376,11 @@ class Cart {
         let sum = 0;
         for (let i = 0; i < this.pricearr.length; i++) {
             sum += parseInt(this.pricearr[i][0]);
-
         }
         this.t_span.innerHTML = `¥  ${sum}.00`;
+        this.numobj.innerHTML = this.pricearr.length;
     }
-
-
-
 }
-new Cart().init();
+export {
+    Cart
+}

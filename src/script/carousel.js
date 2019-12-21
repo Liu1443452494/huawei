@@ -12,9 +12,31 @@ class Carousel {
         this.rightbtn = $('.button_right');
         this.timer = null;
         this.carousel = $('#carousel');
-        this.topcontnet = $('.topContent_2')
+        this.topcontnet = $('.topContent_2');
+        this.login_url = $('.login_url');
+
+
     }
     init() {
+
+            //判断登录状态
+            if (jstool.getcookie('login')) {
+                let str = jstool.getcookie('username1');
+                let str1 = str.substr(0, 4);
+                let str2 = str.substr(7.4);
+                console.log(str2);
+
+
+                this.login_url.innerHTML = `
+                您好！ &nbsp;<a href="login.html">${str1} </a>
+                                <span>****</span><a href="register.html">${str2}</a>`
+            } else {
+                this.login_url.innerHTML = `
+                您好！请 &nbsp;<a href="login.html">登录 </a>
+                <span>&nbsp;/&nbsp;</span><a href="register.html">注册</a>
+                `
+            }
+
             let _this = this;
             ajax({
                 url: this.url + 'carousel.php',

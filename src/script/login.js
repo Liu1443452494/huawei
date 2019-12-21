@@ -1,5 +1,4 @@
 import { $, ajax, bufferMove, rannum, addClass, removeClass, removeAll, jstool } from './tools.js';
-
 //登录
 class Login {
     constructor() {
@@ -54,8 +53,8 @@ class Login {
                         }).then(data => {
                             if (data) {
                                 if (_this.inputs[2].checked) {
-                                    jstool.addcookie('username', _this.inputs[0].value);
-                                    jstool.addcookie('password', _this.inputs[1].value);
+                                    jstool.addcookie('username', _this.inputs[0].value, 10);
+                                    jstool.addcookie('password', _this.inputs[1].value, 10);
                                 } else {
                                     jstool.delcookie('username');
                                     jstool.delcookie('password');
@@ -63,7 +62,9 @@ class Login {
                                 }
 
                                 alert('登录成功');
-                                console.log(1);
+                                jstool.addcookie('username1', _this.inputs[0].value, 1);
+                                jstool.addcookie('login', true, 1)
+
 
                                 location.href = 'http://10.31.161.144/huawei/src/shouye.html'
                             } else {
@@ -81,4 +82,6 @@ class Login {
         }
     }
 }
-new Login().init();
+export {
+    Login
+}

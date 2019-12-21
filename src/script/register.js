@@ -277,4 +277,6 @@ class Formvalidator {
     }
 
 }
-new Formvalidator().init();
+export {
+    Formvalidator
+}

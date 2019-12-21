@@ -81,7 +81,6 @@ class Mglass {
 
 
 }
-new Mglass().init();
 
 
 
@@ -193,7 +192,7 @@ class Cartrender {
 
 
 }
-new Cartrender().init();
+
 
 
 
@@ -209,16 +208,16 @@ class Addcart {
         this.input = $('.stock input')
         this.btn = $('.buttonmain .btn-01');
 
-
     }
     init() {
         let _this = this;
         this.btn.onclick = function() {
             _this.addcart();
+            if (confirm('购物车加入成功，是否进入购物车查看')) {
+                location.href = 'cart.html'
+            }
         }
-
     }
-
 
     //加入购物车
     addcart() {
@@ -244,4 +243,8 @@ class Addcart {
 
     }
 }
-new Addcart().init();
+export {
+    Mglass,
+    Cartrender,
+    Addcart
+}

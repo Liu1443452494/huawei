@@ -563,6 +563,7 @@ body {
 }
 .list-pro .pro_area .pro_main li:last-child span {
   color: #a4a4a4;
+  cursor: pointer;
 }
 .list-pro .pro_server .server_list {
   width: 1039px;

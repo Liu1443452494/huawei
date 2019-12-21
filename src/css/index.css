@@ -1030,16 +1030,16 @@
   background: #fff;
   position: relative;
   border-radius: 10px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+  transition: all .2s linear 0s;
+}
+.recommed_list .grid_list .grid_info:hover {
+  box-shadow: 0px 2px 12px 5px rgba(0, 0, 0, 0.1);
 }
 .recommed_list .grid_list img {
   display: block;
   width: 150px;
   height: 150px;
   margin: 0 auto;
-}
-.recommed_list .grid_list .box_shadow {
-  box-shadow: 0px 2px 12px 5px rgba(0, 0, 0, 0.1);
 }
 .recommed_list .grid_list .grid_title,
 .recommed_list .grid_list .grid_price {
@@ -1080,9 +1080,25 @@
 #floor_bottom {
   min-height: 1200px;
 }
+#floor_bottom h2 {
+  display: block;
+  padding: 27px 0 13px 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 400;
+}
 #floor_bottom .bottomContent {
   min-height: 1200px;
-  background: green;
+}
+#floor_bottom li {
+  width: 228px;
+}
+#floor_bottom li:nth-of-type(1) > a img {
+  width: 230px;
+  height: 290px;
+}
+#floor_bottom li:hover {
+  box-shadow: 0px 2px 12px 5px rgba(0, 0, 0, 0.1);
 }
 
 #channel_floor_2 {
