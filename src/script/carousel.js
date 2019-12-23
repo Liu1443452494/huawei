@@ -18,15 +18,12 @@ class Carousel {
 
     }
     init() {
-
             //判断登录状态
             if (jstool.getcookie('login')) {
                 let str = jstool.getcookie('username1');
                 let str1 = str.substr(0, 4);
                 let str2 = str.substr(7.4);
                 console.log(str2);
-
-
                 this.login_url.innerHTML = `
                 您好！ &nbsp;<a href="login.html">${str1} </a>
                                 <span>****</span><a href="register.html">${str2}</a>`
@@ -156,7 +153,6 @@ class Panels {
                     let str = '';
                     for (let value of data) {
                         if (parseInt(value.type) == i) {
-                            console.log(i);
                             str += '<ul>'
                             let arr = value.urls.split(',');
                             let arr1 = value.title.split(',')

@@ -66,7 +66,7 @@ class Login {
                                 jstool.addcookie('login', true, 1)
 
 
-                                location.href = 'http://10.31.161.144/huawei/src/shouye.html'
+                                location.href = 'index.html'
                             } else {
                                 _this.p.style.display = 'block';
                                 _this.tips.innerHTML = '账号或密码错误'
